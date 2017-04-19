@@ -9,7 +9,7 @@ function htmlentities(str) {
 function urlify(text) {
     var urlRegex = /(https?:\/\/[^\s]+)/g;
     return text.replace(urlRegex, function(url) {
-        return '<a href="https://therotg.com/go.php?url=' + encodeURIComponent(url) + '">' + url + '</a>';
+        return '<a target="_blank" href="https://therotg.com/go.php?url=' + encodeURIComponent(url) + '">' + url + '</a>';
     })
 }
 
