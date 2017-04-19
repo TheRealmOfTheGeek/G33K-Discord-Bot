@@ -50,9 +50,9 @@ client.on('message', msg => {
 	msgs.push(m);
 	console.log(m);
   }
-  var a = content.split(" ");
-  var cmd = a[0].toLowerCase(); // Right?? idk
-  var arg1 = a[1].toLowerCase();
+  var a = content.split(" ").toLowerCase();
+  var cmd = a[0];
+  var arg1 = a[1];
   if (cmd == "g33k" || cmd == "geek") {
 	if(arg1 == null) {
 		msg.reply("Hello!");
