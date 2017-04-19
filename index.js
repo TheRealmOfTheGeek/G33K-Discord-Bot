@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+var request = require('request');
 const client = new Discord.Client();
 var express = require('express')
 var app = express()
@@ -8,8 +9,10 @@ function htmlentities(str) {
 }
 function urlify(text) {
     var urlRegex = /(https?:\/\/[^\s]+)/g;
-    return text.replace(urlRegex, function(url) {
-        return '<a target="_blank" href="https://therotg.com/go.php?url=' + encodeURIComponent(url) + '">' + url + '</a>';
+    return text.replace(urlRegex, function(iurl) {
+	    url = 'https://therotg.com/go.php?url=' + encodeURIComponent(iurl);
+	    // do we need to use yourls when they don't see the url ?? If its easier, we can just replace the chat links with shorter ones (aka the ones they see in Discord)
+        return '<a target="_blank" href="' + url + '">' + iurl + '</a>';
     })
 }
 
@@ -21,6 +24,19 @@ client.on('ready', () => {
   console.log("Logged in as " + client.user.username + "!");
   client.user.setGame("therotg.com/bot");
 });
+// On person join
+client.on("guildMemberAdd", (member) => {
+  const guild = member.guild;
+  newUsers.set(member.user.id, member.user);
+
+  if(newUsers.size > 10) {
+    let userlist = newUsers.map(u => u.mention()).join(" ");
+    guild.channels.get(guild.id).sendMessage("Welcome our new users!\n"+userlist);
+    newUsers = new Discord.Collection();
+  }
+});
+
+// Commands
 client.on('message', msg => {
   user = msg.author;
   username = user.username;
