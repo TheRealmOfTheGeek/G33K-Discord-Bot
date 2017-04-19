@@ -22,7 +22,9 @@ client.on('message', msg => {
 	servername = server.name;
 	console.log(servername + ' #' + channelname + ', ' + username + ': ' + content);
   }
-  if (content == "g33k") {
+  var a = content.split(" ");
+  var cmd = a[0];
+  if (cmd == "g33k") {
 	msg.reply("Hello!");
   }
 });
