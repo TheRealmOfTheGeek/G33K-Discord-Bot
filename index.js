@@ -6,6 +6,12 @@ var app = express()
 function htmlentities(str) {
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
+function urlify(text) {
+    var urlRegex = /(https?:\/\/[^\s]+)/g;
+    return text.replace(urlRegex, function(url) {
+        return '<a href="https://therotg.com/go.php?url=' + encodeURIComponent(url) + '">' + url + '</a>';
+    })
+}
 
 var msgs = [];
 var jsonfile = require('jsonfile')
@@ -44,7 +50,7 @@ console.log('logged in');
 app.get('/', function (req, res) {
   h = '<pre>';
   msgs.forEach(function (msg) {
-	  h = h + "\n" + htmlentities(msg);
+	  h = h + "\n" + urlify(htmlentities(msg));
   });
   h = h + "\n</pre>";
   res.send(h);
