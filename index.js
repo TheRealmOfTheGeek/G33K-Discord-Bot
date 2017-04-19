@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-//var request = require('request');
+var request = require('request');
 const client = new Discord.Client();
 var express = require('express')
 var app = express()
@@ -60,20 +60,34 @@ client.on('message', msg => {
 		msg.reply("Hello!");
 	} else if(arg1 == "introduce") {
 		if(arg2 == null) {
-			msg.channel.sendMessage("Introduce whome? Myself or Kento? (syntax: G33k introduce yourself / kento)");	
-		}
-		if(arg2 == "yourself") {
+			msg.channel.sendMessage(msg.channel, "Introduce whome? Myself or Kento? (syntax: G33k introduce yourself / kento)");	
+		} else 	if(arg2 == "yourself") {
 			msg.channel.sendMessage("", {embed: {
 			  color: 3447003,
 			  description: "I am G33K, a bot made by Kento (with the help of Nick)! I was first created on 19/04/2017, and am totally open source (https://therotg.com/pshort/bot), so go ahead and fork me!"
 			}});
-		}
-		if(arg2 == "kento") {
+		} else 	if(arg2 == "kento") {
 			msg.channel.sendMessage("", {embed: {
 			  color: 3447003,
 			  description: "Kento is a teenaged developer, 13, who enjoys coding, making YouTube tutorials, and having fun on Discord!"
 			}});
-		} // do u want an introduction?
+		} else if (arg2 == "nick") {
+			
+			request('https://api.nick.tools/info' function (error, response, body) {
+			  if (response.statusCode == 200) {
+				  body = JSON.parse(body);
+				msg.channel.sendMessage("", {embed: {
+				  color: 3447003,
+				  description: body.info
+				}});
+			  } else {
+				msg.channel.sendMessage("", {embed: {
+				  color: 3447003,
+				  description: "Error while getting nick's stuff :("
+				}});
+			  }
+			});
+		}
 		
 	}
   }
