@@ -28,13 +28,9 @@ client.on('ready', () => {
 newUsers = new Discord.Collection();
 client.on("guildMemberAdd", (member) => {
   const guild = member.guild;
-  newUsers.set(member.user.id, member.user);
-
-  if(newUsers.size > 10) {
-    let userlist = newUsers.map(u => u.mention()).join(" ");
-    guild.channels.get(guild.id).sendMessage("Welcome our new users!\n"+userlist);
-    newUsers = new Discord.Collection();
-  }
+    guild.channels.get(guild.id).sendMessage("Welcome " + member.mention());
+    //newUsers = new Discord.Collection();
+  // good?
 });
 
 // Commands
