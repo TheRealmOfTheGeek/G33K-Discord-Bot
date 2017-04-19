@@ -50,7 +50,7 @@ client.on('message', msg => {
 	msgs.push(m);
 	console.log(m);
   }
-  var a = content.split(" ").toLowerCase();
+  var a = content.toLowerCase().split(" ");
   var cmd = a[0];
   var arg1 = a[1];
   if (cmd == "g33k" || cmd == "geek") {
