@@ -61,12 +61,14 @@ client.on('message', msg => {
 	} else if(arg1 == "introduce") {
 		if(arg2 == null) {
 			msg.channel.sendMessage("", "Introduce whome? Myself or Kento? (syntax: G33k introduce yourself / kento");	
-		} else if(arg2 == "yourself") {
+		}
+		if(arg2 == "yourself") {
 			msg.channel.sendMessage("", {embed: {
 			  color: 3447003,
 			  description: "I am G33K, a bot made by Kento (with the help of Nick)! I was first created on 19/04/2017, and am totally open source (https://therotg.com/pshort/bot), so go ahead and fork me!"
 			}});
-		} else if(arg2 == "kento") {
+		}
+		if(arg2 == "kento") {
 			msg.channel.sendMessage("", {embed: {
 			  color: 3447003,
 			  description: "Kento is a teenaged developer, 13, who enjoys coding, making YouTube tutorials, and having fun on Discord!"
