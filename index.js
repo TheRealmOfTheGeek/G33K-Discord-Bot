@@ -42,7 +42,7 @@ app.get('/', function (req, res) {
   msgs.forEach(function (msg) {
 	  h = h + msg;
   });
-  h = '</pre>';
+  h = h + '</pre>';
   res.send(h);
   console.log('Access from ' + req.connection.remoteAddress);
 });
