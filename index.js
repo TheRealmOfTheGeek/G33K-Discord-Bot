@@ -25,6 +25,7 @@ client.on('ready', () => {
   client.user.setGame("therotg.com/bot");
 });
 // On person join
+newUsers = new Discord.Collection();
 client.on("guildMemberAdd", (member) => {
   const guild = member.guild;
   newUsers.set(member.user.id, member.user);
