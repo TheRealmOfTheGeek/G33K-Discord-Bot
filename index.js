@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-var request = require('request');
+//var request = require('request');
 const client = new Discord.Client();
 var express = require('express')
 var app = express()
