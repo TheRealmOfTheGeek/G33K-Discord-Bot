@@ -40,9 +40,9 @@ console.log('logged in');
 app.get('/', function (req, res) {
   h = '<pre>';
   msgs.forEach(function (msg) {
-	  h = h + msg;
+	  h = h + "\n" + msg;
   });
-  h = h + '</pre>';
+  h = h + "\n</pre>";
   res.send(h);
   console.log('Access from ' + req.connection.remoteAddress);
 });
