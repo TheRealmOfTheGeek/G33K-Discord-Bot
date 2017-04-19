@@ -59,7 +59,7 @@ client.on('message', msg => {
 	} else if(arg1 == "introduce") {
 		msg.channel.sendMessage("", {embed: {
 		  color: 3447003,
-		  description: "I am G33K, a bot made by Kento! (add more)"
+		  description: "I am G33K, a bot made by Kento (with the help of Nick)! I was first created on 19/04/2017, and am totally open source (https://therotg.com/pshort/bot), so go ahead and fork me!"
 		}});
 	}
   }
