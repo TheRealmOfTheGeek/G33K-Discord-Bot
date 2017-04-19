@@ -3,6 +3,10 @@ const client = new Discord.Client();
 var express = require('express')
 var app = express()
 
+function htmlentities(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
 var msgs = [];
 var jsonfile = require('jsonfile')
 var token = jsonfile.readFileSync('/home/ubuntu/.key').token;
@@ -40,7 +44,7 @@ console.log('logged in');
 app.get('/', function (req, res) {
   h = '<pre>';
   msgs.forEach(function (msg) {
-	  h = h + "\n" + msg;
+	  h = h + "\n" + htmlentities(msg);
   });
   h = h + "\n</pre>";
   res.send(h);
