@@ -28,7 +28,7 @@ client.on('ready', () => {
 newUsers = new Discord.Collection();
 client.on("guildMemberAdd", (member) => {
   const guild = member.guild;
-    guild.channels.get(guild.id).sendMessage("Welcome " + member.mention());
+    guild.channels.get(guild.id).sendMessage("Welcome " + member.toString());
     //newUsers = new Discord.Collection();
   // good?
 });
