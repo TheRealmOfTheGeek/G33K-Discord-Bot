@@ -1,0 +1,24 @@
+{
+  "name": "g33k-discord-bot",
+  "version": "1.0.0",
+  "description": "This is the official Discord bot for TheROTGs Discord channel!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheRealmOfTheGeek/G33K-Discord-Bot.git"
+  },
+  "author": "Kento (TheROTG)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TheRealmOfTheGeek/G33K-Discord-Bot/issues"
+  },
+  "homepage": "https://github.com/TheRealmOfTheGeek/G33K-Discord-Bot#readme",
+  "dependencies": {
+    "@types/node": "^7.0.13",
+    "discord.js": "^11.0.0",
+    "jsonfile": "^2.4.0"
+  }
+}
