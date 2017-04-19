@@ -73,7 +73,7 @@ client.on('message', msg => {
 			}});
 		} else if (arg2 == "nick") {
 			
-			request('https://api.nick.tools/info' function (error, response, body) {
+			request('https://api.nick.tools/info', function (error, response, body) {
 			  if (response.statusCode == 200) {
 				  body = JSON.parse(body);
 				msg.channel.sendMessage("", {embed: {
