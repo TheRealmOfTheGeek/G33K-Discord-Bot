@@ -57,7 +57,10 @@ client.on('message', msg => {
 	if(arg1 == null) {
 		msg.reply("Hello!");
 	} else if(arg1 == "introduce") {
-		msg.send("I am G33K, a bot made by Kento! (add more)");
+		message.channel.sendMessage("", {embed: {
+		  color: 3447003,
+		  description: "I am G33K, a bot made by Kento! (add more)"
+		}});
 	}
   }
 });
