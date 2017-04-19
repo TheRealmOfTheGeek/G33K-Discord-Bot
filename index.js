@@ -38,10 +38,11 @@ console.log('logged in');
 
 
 app.get('/', function (req, res) {
-  h = '';
+  h = '<pre>';
   msgs.forEach(function (msg) {
 	  h = h + msg;
   });
+  h = '</pre>';
   res.send(h);
   console.log('Access from ' + req.connection.remoteAddress);
 });
