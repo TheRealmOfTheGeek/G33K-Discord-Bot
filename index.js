@@ -51,9 +51,14 @@ client.on('message', msg => {
 	console.log(m);
   }
   var a = content.split(" ");
-  var cmd = a[0];
+  var cmd = a[0].toLowerCase(); // Right?? idk
+  var arg1 = a[1].toLowerCase();
   if (cmd == "g33k" || cmd == "geek") {
-	msg.reply("Hello!");
+	if(arg1 == null) {
+		msg.reply("Hello!");
+	} else if(arg1 == "introduce") {
+		msg.send("I am G33K, a bot made by Kento! (add more)");
+	}
   }
 });
 client.login(token);
