@@ -2,7 +2,6 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 var jsonfile = require('jsonfile')
 var token = jsonfile.readFileSync('/home/ubuntu/.key').token;
-//console.log(token);
 console.log('started');
 client.on('ready', () => {
   console.log("Logged in as " + client.user.username + "!");
