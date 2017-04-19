@@ -24,7 +24,7 @@ client.on('message', msg => {
 	server = channel.guild;
 	servername = server.name;
 	m = servername + ' #' + channelname + ', ' + username + ': ' + content;
-	array_push(msgs, m);
+	msgs.push(m);
 	console.log(m);
   }
   var a = content.split(" ");
