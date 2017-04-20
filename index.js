@@ -4,7 +4,6 @@ const client = new Discord.Client();
 var express = require('express');
 var app = express();
 var fs = require('fs');
-//var words = fs.readFileSync('/home/ubuntu/rude.txt').toString().split("\n");
 var badwords = [];
 var lineReader = require('readline').createInterface({
   input: require('fs').createReadStream('/home/ubuntu/rude.txt')
@@ -23,7 +22,6 @@ function urlify(text) {
     var urlRegex = /(https?:\/\/[^\s]+)/g;
     return text.replace(urlRegex, function(iurl) {
 	    url = 'https://therotg.com/go.php?url=' + encodeURIComponent(iurl);
-	    // do we need to use yourls when they don't see the url ?? If its easier, we can just replace the chat links with shorter ones (aka the ones they see in Discord)
         return '<a target="_blank" href="' + url + '">' + iurl + '</a>';
     })
 }
@@ -42,8 +40,6 @@ newUsers = new Discord.Collection();
 client.on("guildMemberAdd", (member) => {
   const guild = member.guild;
     guild.channels.get(guild.id).sendMessage("Welcome " + member.toString() + " to the group! If you need any info about me, Kento, or Nick, please type 'g33k introduce <yourself/kento/nick>'");
-    //newUsers = new Discord.Collection();
-  // good?
 });
 
 client.on('message', msg => {
@@ -72,17 +68,6 @@ client.on('message', msg => {
 	"I'm ashamed.",
 	"Please, http://i.memecaptain.com/gend_images/MzkJ3g.jpg"
 	]
-	// So do u know how to change suuup to sup?
-	/*
-	badwords.forEach(function(bw)) {
-		if(msg.content.toLowerCase().includes(bw.toString())) {
-			var whichone = Math.floor((Math.random() * responses.length) + 1);
-
-			msg.delete();
-			msg.reply(responses[whichone]);
-		)}
-	});
-	*/
 	for (var i = 0, len = badwords.length; i < len; i++) {
 		if(msg.content.toLowerCase().includes(badwords[i])) {
 			var whichone = Math.floor((Math.random() * responses.length));
@@ -91,7 +76,7 @@ client.on('message', msg => {
 			msg.reply(responses[whichone]);
 		}	
 	}
-  // Commands	// it was working before lol ik
+  // Commands
   var a = content.toLowerCase().split(" ");
   var cmd = a[0];
   var arg1 = a[1];
@@ -140,11 +125,6 @@ client.on('message', msg => {
 			  } 
 			});
 		}
-	
-	else if(arg1 == "invite") {
-		var inv = client.invite();
-		msg.reply("Your invite code is: " + inv.toString());
-	}
 	}
   }
 });
