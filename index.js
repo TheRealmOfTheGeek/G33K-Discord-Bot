@@ -2,10 +2,14 @@ const Discord = require("discord.js");
 var request = require('request');
 const client = new Discord.Client();
 var express = require('express')
-var app = express()
-
+var app = express();
+var fs = require('fs');
+var words = fs.readFileSync('/home/ubuntu/rude.txt').split("\n");
 function htmlentities(str) {
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+function removeduplicates(txt) {
+	return txt;
 }
 function urlify(text) {
     var urlRegex = /(https?:\/\/[^\s]+)/g;
@@ -59,13 +63,15 @@ client.on('message', msg => {
 	"really? Did you read the rules??",
 	"I'm ashamed."
 	]
-	
-	if(msg.content.toLowerCase().includes("fuck") || msg.content.toLowerCase().includes("shit") || msg.content.toLowerCase().includes("n1g") || msg.content.toLowerCase().includes("nig") || msg.content.toLowerCase().includes("cunt") || msg.content.toLowerCase().includes("fag")) {
-		var whichone = Math.floor((Math.random() * responses.length) + 1);
+	// So do u know how to change suuup to sup?
+	words.forEach(function(bw) {
+		if(msg.content.toLowerCase().includes(bw)) {
+			var whichone = Math.floor((Math.random() * responses.length) + 1);
 
-		msg.delete();
-		msg.reply(responses[whichone]);
-	}
+			msg.delete();
+			msg.reply(responses[whichone]);
+		}
+	});
   // Commands	
   var a = content.toLowerCase().split(" ");
   var cmd = a[0];
