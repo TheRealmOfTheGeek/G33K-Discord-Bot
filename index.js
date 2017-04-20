@@ -4,9 +4,9 @@ const client = new Discord.Client();
 var express = require('express');
 var app = express();
 var fs = require('fs');
-		var concat = require('concat-stream');
-			var JSONStream = require('JSONStream');
-			var strawpoll = require('strawpoll');
+var concat = require('concat-stream');
+var strawpoll = require('strawpoll');
+ 
 // Test
 var voting = 0;
 
@@ -185,24 +185,23 @@ client.on('message', msg => {
 			var op1 = votable[1];
 			var op2 = votable[2];
 			var op3 = votable[3];
+				var stream = strawpoll({
+				  title: title.toString(),
+				  options: [
+				    op1.toString(),
+				    op2.toString(),
+				    op3.toString()
+				  ],
+				  multi: false,
+				  permissive: true
+				});
 
-			var stream = strawpoll({
-			  title: title.toString(),
-			  options: [
-			    op1.toString(),
-			    op2.toString(),
-			    op3.toString(),
-			  ],
-			  multi: false,
-			  permissive: true
-			})
-			  .pipe(JSONStream.parse('id'))
-			  .pipe(concat(function(id) {
-			    // `id` is a Buffer here 
-			    // `id.toString()` is your poll's id 
-			  }));
-			
-			msg.reply("ID: " +id.toString());
+				stream.pipe(concat(function(poll) {
+				  poll = JSON.parse(poll);
+				  // poll.id is your poll's id 
+				  // check out your poll at strawpoll.me/id 
+				}));
+			msg.reply("https://www.strawpoll.me/" + poll.id);
 		}
 	}
   }
