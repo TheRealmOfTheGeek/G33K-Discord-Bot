@@ -9,9 +9,8 @@ var badwords = [];
 var lineReader = require('readline').createInterface({
   input: require('fs').createReadStream('/home/ubuntu/rude.txt')
 });
-
 lineReader.on('line', function (line) {
-	badwords.push(line);
+	badwords.push(line.toString());
 });
 
 console.log(words);
