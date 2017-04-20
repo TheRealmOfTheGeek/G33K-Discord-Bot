@@ -179,7 +179,7 @@ client.on('message', msg => {
 	} 
 	else if(arg1 == "stats") {
 		if(arg2 === null) {
-			msg.reply("Stats for what? Syntax: '"+cmd.toString()+" stats <youtube>'");
+			return;
 		} else if(arg2 == "youtube") {
 			request('https://api.nick.tools/youtubechannel?id=UCuX4KZBMpQLToSwJWy-jCBw', function (error, response, body) {
 		       if (response.statusCode == 200) {
@@ -196,7 +196,9 @@ client.on('message', msg => {
 		       } 
 
 		     });
-		} 
+		} else {
+			msg.reply("Stats for what? Syntax: '"+cmd.toString()+" stats <youtube>'");
+		}
 	}  
 	else {
 		msg.reply("error 404: command not found. Please type '"+cmd.toString()+" help' for help!");
