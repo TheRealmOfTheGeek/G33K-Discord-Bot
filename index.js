@@ -99,7 +99,7 @@ client.on('message', msg => {
 			});
 		}
 	
-	else if(arg1 == "make" && arg2 == "an" && arg3 == "invite") {
+	else if(arg1 == "invite") {
 		var inv = client.invite();
 		msg.reply("Your invite code is: " + inv.toString());
 	}
