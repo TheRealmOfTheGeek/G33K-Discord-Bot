@@ -5,6 +5,7 @@ var express = require('express')
 var app = express();
 var fs = require('fs');
 var words = fs.readFileSync('/home/ubuntu/rude.txt').toString().split("\n");
+console.log(words);
 function htmlentities(str) {
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
