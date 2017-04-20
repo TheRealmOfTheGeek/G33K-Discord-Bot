@@ -186,7 +186,7 @@ client.on('message', msg => {
 			   body = JSON.parse(body);
 			 msg.channel.sendMessage("", {embed: {
 			   color: 3447003,
-			   description: "Kento Subs: " + body.channel.stats.subs
+			   description: "Kento Currently Has:\nSubs: " + body.channel.stats.subs + "\n" + body.channel.stats.views + " views\n" + body.channel.stats.videos + " videos";
 			 }});
 		       } else {
 			 msg.channel.sendMessage("", {embed: {
