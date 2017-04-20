@@ -23,7 +23,7 @@ function urlify(text) {
     return text.replace(urlRegex, function(iurl) {
 	    url = 'https://therotg.com/go.php?url=' + encodeURIComponent(iurl);
         return '<a target="_blank" href="' + url + '">' + iurl + '</a>';
-    })
+    });
 }
 
 var msgs = [];
