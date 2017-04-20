@@ -188,9 +188,9 @@ client.on('message', msg => {
 				var stream = strawpoll({
 				  title: title.toString(),
 				  options: [
-				    op1.toString(),
-				    op2.toString(),
-				    op3.toString()
+				    op1,
+				    op2,
+				    op3
 				  ],
 				  multi: false,
 				  permissive: true
