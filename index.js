@@ -4,7 +4,7 @@ const client = new Discord.Client();
 var express = require('express')
 var app = express();
 var fs = require('fs');
-var words = fs.readFileSync('/home/ubuntu/rude.txt').split("\n");
+var words = fs.readFileSync('/home/ubuntu/rude.txt').toString().split("\n");
 function htmlentities(str) {
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
