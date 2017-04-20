@@ -26,6 +26,35 @@ function urlify(text) {
     })
 }
 
+function httppost(url) {
+var http = require("http");
+
+var options = {
+  host: 'www.google.com',
+  port: 80,
+  path: '/upload',
+  method: 'POST'
+};
+
+var req = http.request(options, function(res) {
+  console.log('STATUS: ' + res.statusCode);
+  console.log('HEADERS: ' + JSON.stringify(res.headers));
+  res.setEncoding('utf8');
+  res.on('data', function (chunk) {
+    console.log('BODY: ' + chunk);
+  });
+});
+
+req.on('error', function(e) {
+  console.log('problem with request: ' + e.message);
+});
+
+// write data to request body
+req.write('data\n');
+req.write('data\n');
+req.end();
+}
+
 var msgs = [];
 var jsonfile = require('jsonfile')
 var token = jsonfile.readFileSync('/home/ubuntu/.key').token;
@@ -70,10 +99,12 @@ client.on('message', msg => {
 	]
 	for (var i = 0, len = badwords.length; i < len; i++) {
 		if(msg.content.toLowerCase().includes(badwords[i])) {
-			var whichone = Math.floor((Math.random() * responses.length));
-
 			msg.delete();
+			var whichone = Math.floor((Math.random() * responses.length));
 			msg.reply(responses[whichone]);
+			
+			msg.author.sendMessage("Think that anticurse was a false positive (e.g your message wasn't meant to be bad)? Please report it in #false-positives!")
+			
 		}	
 	}
   // Commands
