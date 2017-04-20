@@ -13,7 +13,6 @@ lineReader.on('line', function (line) {
 	badwords.push(line.toString());
 });
 
-console.log(words);
 function htmlentities(str) {
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
