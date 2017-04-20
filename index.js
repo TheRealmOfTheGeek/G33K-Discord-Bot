@@ -51,9 +51,19 @@ client.on('message', msg => {
 	console.log(m);
   }
 // Swear detection
+	var responses = [
+	"cool people don't curse.",
+	"please don't swear.",
+	"swearing is not tolerated here.",
+	"you could use another word..",
+	"really? Did you read the rules??"
+	]
+	
 	if(msg.content.toLowerCase().includes("fuck")) {
+		var whichone = Math.floor((Math.random() * 5) + 1);
+
 		msg.cancel();
-		msg.reply("Please don't swear.");
+		msg.reply(responses[whichone]);
 	}
   // Commands	
   var a = content.toLowerCase().split(" ");
