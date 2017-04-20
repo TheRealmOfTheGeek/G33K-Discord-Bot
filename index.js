@@ -150,8 +150,8 @@ client.on('message', msg => {
 			var q2 = votable[1];
 			
 			msg.channel.sendMessage("a vote has started for: A) " + q1 + " OR B) " + q2).then(sentMessage => {
-				msg.react("🇦");
-				msg.react("🅱");
+				sentMessage.react("🇦");
+				sentMessage.react("🅱");
 			});
 			
 			
