@@ -134,9 +134,8 @@ client.on('message', msg => {
 			  } 
 			});
 		}
-
+	}
 });
-}
 }
 client.login(token);
 console.log('logged in');
