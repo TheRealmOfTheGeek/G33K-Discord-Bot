@@ -65,7 +65,7 @@ client.on('message', msg => {
 	console.log(m);
   }
 	// Markdown
-	if(msg.content.toLowerCase().includes("[\") && msg.content.toLowerCase().includes("/]")) {
+	if(msg.content.toLowerCase().includes(":er ") && msg.content.toLowerCase().includes(" er:")) {
 					      
 	}
 	// Emotion
