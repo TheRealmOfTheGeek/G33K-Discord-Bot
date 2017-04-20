@@ -79,7 +79,7 @@ client.on('message', msg => {
 				msg.channel.sendMessage("", {embed: {
 				  color: 3447003,
 				  description: body.info
-				}}});
+				}})};
 			  } else {
 				msg.channel.sendMessage("", {embed: {
 				  color: 3447003,
