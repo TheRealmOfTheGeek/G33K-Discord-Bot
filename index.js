@@ -5,9 +5,9 @@ var express = require('express');
 var app = express();
 var fs = require('fs');
 //var words = fs.readFileSync('/home/ubuntu/rude.txt').toString().split("\n");
-var badwords = []
+var badwords = [];
 var lineReader = require('readline').createInterface({
-input: require('fs').createReadStream('home/ubuntu/rude.txt');
+input: fs.createReadStream('/home/ubuntu/rude.txt');
 });
 
 lineReader.on('line', function (line) {
