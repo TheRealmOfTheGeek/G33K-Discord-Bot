@@ -196,9 +196,7 @@ client.on('message', msg => {
 		       } 
 
 		     });
-		} else {
-			msg.reply("Idk how to get them stats for '" + arg2.toString() + "' :(");
-		}
+		} 
 	}  
 	else {
 		msg.reply("error 404: command not found. Please type '"+cmd.toString()+" help' for help!");
