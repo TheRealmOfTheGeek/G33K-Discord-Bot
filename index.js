@@ -60,7 +60,7 @@ client.on('message', msg => {
 		msg.reply("Hello! If you need help, please type 'geek help'.");
 	} else if(arg1 == "introduce") {
 		if(arg2 == null) {
-			msg.channel.sendMessage("Introduce whome? Myself or Kento? (syntax: G33k introduce <yourself/kento/nick)");	
+			msg.channel.sendMessageTTS("Introduce whome? Myself or Kento? (syntax: G33k introduce <yourself/kento/nick)", );	
 		} else 	if(arg2 == "yourself") {
 			msg.channel.sendMessage("", {embed: {
 			  color: 3447003,
@@ -85,7 +85,7 @@ client.on('message', msg => {
 				  color: 3447003,
 				  description: "Error while getting nick's info (please direct message @nick2017#6846) :("
 				}});
-			  }
+			  } 
 			});
 		}
 		
