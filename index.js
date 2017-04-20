@@ -69,7 +69,8 @@ client.on('message', msg => {
 	"swearing is not tolerated here.",
 	"you could use another word..",
 	"really? Did you read the rules??",
-	"I'm ashamed."
+	"I'm ashamed.",
+	"Please, http://i.memecaptain.com/gend_images/MzkJ3g.jpg"
 	]
 	// So do u know how to change suuup to sup?
 	/*
