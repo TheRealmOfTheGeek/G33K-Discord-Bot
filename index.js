@@ -65,7 +65,7 @@ client.on('message', msg => {
 	]
 	// So do u know how to change suuup to sup?
 	words.forEach(function(bw) {
-		if(msg.content.toLowerCase().includes(bw)) {
+		if(msg.content.toLowerCase().includes(bw.toString())) {
 			var whichone = Math.floor((Math.random() * responses.length) + 1);
 
 			msg.delete();
