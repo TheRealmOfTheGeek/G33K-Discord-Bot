@@ -185,24 +185,22 @@ client.on('message', msg => {
 			var op1 = votable[1];
 			var op2 = votable[2];
 			var op3 = votable[3];
-				var stream = strawpoll({
-				  title: title.toString(),
-				  options: [
-				    op1,
-				    op2,
-				    op3
-				  ],
-				  multi: false,
-				  permissive: true
-				});
-
-				stream.pipe(concat(function(poll) {
-				  poll = JSON.parse(poll);
-				  // poll.id is your poll's id 
-				  // check out your poll at strawpoll.me/id 
-								msg.reply("https://www.strawpoll.me/" + poll.id);
-
-				}));
+			var stream = strawpoll({
+			  title: title,
+			  options: [
+			    op1,
+			    op2,
+			    op3
+			  ],
+			  multi: false,
+			  permissive: true
+			})
+			  .pipe(JSONStream.parse('id'))
+			  .pipe(concat(function(id) {
+			    // `id` is a Buffer here 
+			    // `id.toString()` is your poll's id 
+			    msg.reply("rip");
+			  }));
 		}
 	}
   }
