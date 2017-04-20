@@ -63,8 +63,17 @@ client.on('message', msg => {
   }
 	
 	// Emotion
-	if(msg.content.toLowerCase().includes("geek") && msg.content.toLowerCase().includes("hate you")) {
-		msg.reply("that hurts my feelings ;(");
+	if(msg.content.toLowerCase().includes("geek") && msg.content.toLowerCase().includes("hate you") || msg.content.toLowerCase().includes("bitch")) {
+		var responses = [
+		"Ouch.",
+		"that hurts my feelings ;( -10",
+		"no need to say that..",
+		"meany",
+		";("
+		];
+		var whichone = Math.floor((Math.random() * responses.length));
+
+		msg.reply(responses[whichone]);
 	}
 		
 // Swear detection
