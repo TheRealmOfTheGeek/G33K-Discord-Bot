@@ -56,7 +56,8 @@ client.on('message', msg => {
 	"please don't swear.",
 	"swearing is not tolerated here.",
 	"you could use another word..",
-	"really? Did you read the rules??"
+	"really? Did you read the rules??",
+	"I'm ashamed."
 	]
 	
 	if(msg.content.toLowerCase().includes("fuck")) {
