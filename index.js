@@ -98,12 +98,12 @@ client.on('message', msg => {
 
   if (cmd == "g33k" || cmd == "geek") {
 
-	if(arg1 == null) {
+	if(arg1 === null) {
 		msg.reply("Hello! If you need help, please type 'geek help'.");
 	} 
 	// Introduction
 	else if(arg1 == "introduce") {
-		if(arg2 == null) {
+		if(arg2 === null) {
 			msg.channel.sendMessage("Introduce whome? Myself or Kento? (syntax: G33k introduce <yourself/kento/nick)");	
 		} else 	if(arg2 == "yourself") {
 			msg.channel.sendMessage("", {embed: {
