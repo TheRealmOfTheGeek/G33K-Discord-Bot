@@ -60,7 +60,7 @@ client.on('message', msg => {
 	"I'm ashamed."
 	]
 	
-	if(msg.content.toLowerCase().includes("fuck")) {
+	if(msg.content.toLowerCase().includes("fuck") || msg.content.toLowerCase().includes("shit") || msg.content.toLowerCase().includes("nigger") || msg.content.toLowerCase().includes("cunt") msg.content.toLowerCase().includes("fag")) {
 		var whichone = Math.floor((Math.random() * 5) + 1);
 
 		msg.delete();
