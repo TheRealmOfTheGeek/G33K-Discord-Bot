@@ -200,8 +200,9 @@ client.on('message', msg => {
 				  poll = JSON.parse(poll);
 				  // poll.id is your poll's id 
 				  // check out your poll at strawpoll.me/id 
+								msg.reply("https://www.strawpoll.me/" + poll.id);
+
 				}));
-			msg.reply("https://www.strawpoll.me/" + poll.id);
 		}
 	}
   }
