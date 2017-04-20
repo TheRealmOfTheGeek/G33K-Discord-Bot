@@ -76,7 +76,7 @@ client.on('message', msg => {
 			
 			msg.author.sendMessage("", {embed: {
 			  color: 0xce2916,
-			  description: "Think that anticurse was a false positive (e.g your message wasn't meant to be bad)? Please report it in #false-positives!"
+			  description: "Think that anticurse was a false positive (e.g '"+msg.content.toString()+"' wasn't meant to be bad)? Please report it in #false-positives!"
 			}});
 			
 		}	
