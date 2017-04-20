@@ -174,3 +174,8 @@ app.get('/', function (req, res) {
 app.listen(3434, function () {
   console.log('Example app listening on port 3434!');
 });
+
+
+process.on("unhandledRejection", err => {
+  console.error("Uncaught Promise Error: \n" + err.stack);
+});
