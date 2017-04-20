@@ -58,6 +58,9 @@ client.on('message', msg => {
 	msgs.push(m);
 	console.log(m);
   }
+		if(msg.channel.id == 'false-positives' || msg.channel.id == 'memes') {
+		return;
+	} else {
 // Swear detection
 	var responses = [
 	"cool people don't curse.",
@@ -96,6 +99,7 @@ client.on('message', msg => {
   var arg10 = a[10];
 
   if (cmd == "g33k" || cmd == "geek") {
+
 	if(arg1 == null) {
 		msg.reply("Hello! If you need help, please type 'geek help'.");
 	} 
@@ -133,6 +137,7 @@ client.on('message', msg => {
 	}
   }
 });
+}
 client.login(token);
 console.log('logged in');
 
