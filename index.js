@@ -103,7 +103,10 @@ client.on('message', msg => {
 			var whichone = Math.floor((Math.random() * responses.length));
 			msg.reply(responses[whichone]);
 			
-			msg.author.sendMessage("Think that anticurse was a false positive (e.g your message wasn't meant to be bad)? Please report it in #false-positives!")
+			msg.author.sendMessage("", {embed: {
+			  color: 3447003,
+			  description: "Think that anticurse was a false positive (e.g your message wasn't meant to be bad)? Please report it in #false-positives!"
+			}});
 			
 		}	
 	}
