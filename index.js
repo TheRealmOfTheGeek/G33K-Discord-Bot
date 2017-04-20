@@ -54,13 +54,23 @@ client.on('message', msg => {
   var cmd = a[0];
   var arg1 = a[1];
   var arg2 = a[2];
+  var arg3 = a[3];
+  var arg4 = a[4];
+  var arg5 = a[5];
+  var arg6 = a[6];
+  var arg7 = a[7];
+  var arg8 = a[8];
+  var arg9 = a[9];
+  var arg10 = a[10];
 
   if (cmd == "g33k" || cmd == "geek") {
 	if(arg1 == null) {
 		msg.reply("Hello! If you need help, please type 'geek help'.");
-	} else if(arg1 == "introduce") {
+	} 
+	// Introduction
+	else if(arg1 == "introduce") {
 		if(arg2 == null) {
-			msg.channel.sendTTSMessage("Introduce whome? Myself or Kento? (syntax: G33k introduce <yourself/kento/nick)");	
+			msg.channel.sendMessage("Introduce whome? Myself or Kento? (syntax: G33k introduce <yourself/kento/nick)");	
 		} else 	if(arg2 == "yourself") {
 			msg.channel.sendMessage("", {embed: {
 			  color: 3447003,
@@ -88,7 +98,11 @@ client.on('message', msg => {
 			  } 
 			});
 		}
-		
+	
+	else if(arg1 == "make" && arg2 == "an" && arg3 == "invite") {
+		var inv = client.code();
+		msg.reply("Your invite code is: " + inv.toString());
+	}
 	}
   }
 });
