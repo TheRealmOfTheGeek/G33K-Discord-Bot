@@ -33,7 +33,6 @@ client.on("guildMemberAdd", (member) => {
   // good?
 });
 
-// Commands
 client.on('message', msg => {
   user = msg.author;
   username = user.username;
@@ -50,6 +49,11 @@ client.on('message', msg => {
 	msgs.push(m);
 	console.log(m);
   }
+  // Swear Detection
+	if(msg.contains("fuck")) {
+	msg.reply("Please don't swear.");
+	}
+  // Commands	
   var a = content.toLowerCase().split(" ");
   var cmd = a[0];
   var arg1 = a[1];
