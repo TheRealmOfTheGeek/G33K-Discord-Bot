@@ -66,7 +66,7 @@ client.on('message', msg => {
   }
 	
 	// gtg and hello
-	if(msg.content.toLowerCase().includes("i") && msg.contents.toLowerCase().includes("gtg")) {
+	if(msg.content.toLowerCase().includes("gtg")) {
 		msg.channel.sendMessage("Cya later, " + user.toString());
 	}
 	// Markdown
