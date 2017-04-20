@@ -58,9 +58,7 @@ client.on('message', msg => {
 	msgs.push(m);
 	console.log(m);
   }
-		if(msg.channel.id == 'false-positives' || msg.channel.id == 'memes') {
-		return;
-	} else {
+		
 // Swear detection
 	var responses = [
 	"cool people don't curse.",
