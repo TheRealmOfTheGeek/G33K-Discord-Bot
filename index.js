@@ -8,7 +8,6 @@ var concat = require('concat-stream');
 var strawpoll = require('strawpoll');
  var JSONStream = require('JSONStream');
 
-// Test
 var voting = 0;
 
 var badwords = [];
@@ -65,7 +64,10 @@ client.on('message', msg => {
 	msgs.push(m);
 	console.log(m);
   }
-	
+	// Markdown
+	if(msg.content.toLowerCase().includes("[\") && msg.content.toLowerCase().includes("/]")) {
+					      
+	}
 	// Emotion
 	if(msg.content.toLowerCase().includes("geek") && msg.content.toLowerCase().includes("hate you") || msg.content.toLowerCase().includes("bitch")) {
 		var responses = [
@@ -175,35 +177,7 @@ client.on('message', msg => {
 			
 		}
 	}
-	else if(arg1 == "strawpoll") {
-		if(arg2 === null) {
-			msg.reply("Syntax Issue. 'geek strawpoll title|option 1|option 2||option 3");
-		} else {
-			var cmd = msg.content.toString();
-			var vote = cmd.substr(cmd.indexOf(" ") + 15);
-			var votable = vote.split('|');
-			var title = votable[0];
-			var op1 = votable[1];
-			var op2 = votable[2];
-			var op3 = votable[3];
-			var stream = strawpoll({
-			  title: title,
-			  options: [
-			    op1,
-			    op2,
-			    op3
-			  ],
-			  multi: false,
-			  permissive: true
-			})
-			  .pipe(JSONStream.parse('id'))
-			  .pipe(concat(function(id) {
-			    // `id` is a Buffer here 
-			    // `id.toString()` is your poll's id 
-			    msg.reply("full: "+votable+" .... variables: "+title+", "+op1+", "+op2+" "+op3+" Strawpoll: https://strawpoll.me/" + id.toString());
-			  }));
-		}
-	}
+	
   }
 
   
