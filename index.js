@@ -32,7 +32,7 @@ var token = jsonfile.readFileSync('/home/ubuntu/.key').token;
 console.log('started');
 client.on('ready', () => {
   console.log("Logged in as " + client.user.username + "!");
-  client.user.setGame("therotg.com/pshort/bot");
+  client.user.setGame("@kvizdos");
 });
 
 // On person join
