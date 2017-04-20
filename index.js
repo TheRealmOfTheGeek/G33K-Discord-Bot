@@ -149,7 +149,8 @@ client.on('message', msg => {
 			var q1 = votable[0];
 			var q2 = votable[1];
 			
-			msg.reply("has started a vote for: A) " + q1 + " OR B) " + q2).react(":a:");
+			msg.reply("has started a vote for: A) " + q1 + " OR B) " + q2);
+			msg.react(":a:");
 			
 		}
 	}
