@@ -28,7 +28,7 @@ client.on('ready', () => {
 newUsers = new Discord.Collection();
 client.on("guildMemberAdd", (member) => {
   const guild = member.guild;
-    guild.channels.get(guild.id).sendMessage("Welcome " + member.toString() + " to the group!");
+    guild.channels.get(guild.id).sendMessage("Welcome " + member.toString() + " to the group! If you need any info about me, Kento, or Nick, please type 'g33k introduce <yourself/kento/nick>'");
     //newUsers = new Discord.Collection();
   // good?
 });
@@ -57,10 +57,10 @@ client.on('message', msg => {
 
   if (cmd == "g33k" || cmd == "geek") {
 	if(arg1 == null) {
-		msg.reply("Hello!");
+		msg.reply("Hello! If you need help, please type 'geek help'.");
 	} else if(arg1 == "introduce") {
 		if(arg2 == null) {
-			msg.channel.sendMessage("Introduce whome? Myself or Kento? (syntax: G33k introduce yourself / kento / nick)");	
+			msg.channel.sendMessage("Introduce whome? Myself or Kento? (syntax: G33k introduce <yourself/kento/nick)");	
 		} else 	if(arg2 == "yourself") {
 			msg.channel.sendMessage("", {embed: {
 			  color: 3447003,
@@ -69,7 +69,7 @@ client.on('message', msg => {
 		} else 	if(arg2 == "kento") {
 			msg.channel.sendMessage("", {embed: {
 			  color: 3447003,
-			  description: "Kento is a teenaged developer, 13, who enjoys coding, making YouTube tutorials, and having fun on Discord!"
+			  description: "Kento is a teenaged developer, 13, who enjoys coding, making YouTube tutorials, and having fun on Discord! For more info, please visit https://therotg.com!"
 			}});
 		} else if (arg2 == "nick") {
 			
@@ -79,11 +79,11 @@ client.on('message', msg => {
 				msg.channel.sendMessage("", {embed: {
 				  color: 3447003,
 				  description: body.info
-				}});
+				}}});
 			  } else {
 				msg.channel.sendMessage("", {embed: {
 				  color: 3447003,
-				  description: "Error while getting nick's stuff :("
+				  description: "Error while getting nick's info (please direct message @nick2017#6846) :("
 				}});
 			  }
 			});
