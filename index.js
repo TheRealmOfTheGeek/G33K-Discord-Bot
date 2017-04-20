@@ -151,6 +151,7 @@ client.on('message', msg => {
 			
 			msg.reply("has started a vote for: A) " + q1 + " OR B) " + q2);
 			msg.react("🇦");
+			msg.react("🅱");
 			
 		}
 	}
