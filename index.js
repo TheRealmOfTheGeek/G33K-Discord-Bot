@@ -4,7 +4,16 @@ const client = new Discord.Client();
 var express = require('express')
 var app = express();
 var fs = require('fs');
-var words = fs.readFileSync('/home/ubuntu/rude.txt').toString().split("\n");
+//var words = fs.readFileSync('/home/ubuntu/rude.txt').toString().split("\n");
+var badwords = [];
+var lineReader = require('readline').createInterface({
+input: require('fs').createReadStream('home/ubuntu/rude.txt');
+});
+
+lineReader.on('line', function (line) {
+badwords.push(line);
+});
+
 console.log(words);
 function htmlentities(str) {
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -65,7 +74,7 @@ client.on('message', msg => {
 	"I'm ashamed."
 	]
 	// So do u know how to change suuup to sup?
-	words.forEach(function(bw) {
+	badwords.forEach(function(bw) {
 		if(msg.content.toLowerCase().includes(bw.toString())) {
 			var whichone = Math.floor((Math.random() * responses.length) + 1);
 
@@ -73,7 +82,7 @@ client.on('message', msg => {
 			msg.reply(responses[whichone]);
 		)}
 	});
-  // Commands	
+  // Commands	// it was working before lol ik
   var a = content.toLowerCase().split(" ");
   var cmd = a[0];
   var arg1 = a[1];
