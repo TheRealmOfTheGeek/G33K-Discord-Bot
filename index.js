@@ -65,9 +65,9 @@ client.on('message', msg => {
 	console.log(m);
   }
 	// Markdown
-	if(msg.content.toLowerCase().includes(":er ") && msg.content.toLowerCase().includes(" er:")) {
-					      
-	}
+	//if(msg.content.toLowerCase().includes(":er ") && msg.content.toLowerCase().includes(" er:")) {
+	//				      
+	//}
 	// Emotion
 	if(msg.content.toLowerCase().includes("geek") && msg.content.toLowerCase().includes("hate you") || msg.content.toLowerCase().includes("bitch")) {
 		var responses = [
