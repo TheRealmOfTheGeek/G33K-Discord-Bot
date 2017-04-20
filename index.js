@@ -73,6 +73,7 @@ client.on('message', msg => {
 	"I'm ashamed."
 	]
 	// So do u know how to change suuup to sup?
+	/*
 	badwords.forEach(function(bw) {
 		if(msg.content.toLowerCase().includes(bw.toString())) {
 			var whichone = Math.floor((Math.random() * responses.length) + 1);
@@ -81,6 +82,15 @@ client.on('message', msg => {
 			msg.reply(responses[whichone]);
 		)}
 	});
+	*/
+	for (var i = 0, len = badwords.length; i < len; i++) {
+		if(msg.content.toLowerCase().includes(bw.toString())) {
+			var whichone = Math.floor((Math.random() * responses.length) + 1);
+
+			msg.delete();
+			msg.reply(responses[whichone]);
+		)}	
+	}
   // Commands	// it was working before lol ik
   var a = content.toLowerCase().split(" ");
   var cmd = a[0];
