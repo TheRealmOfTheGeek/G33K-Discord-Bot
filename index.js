@@ -89,7 +89,7 @@ client.on('message', msg => {
 
 			msg.delete();
 			msg.reply(responses[whichone]);
-		)}	
+		}	
 	}
   // Commands	// it was working before lol ik
   var a = content.toLowerCase().split(" ");
