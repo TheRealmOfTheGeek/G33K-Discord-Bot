@@ -162,7 +162,7 @@ client.on('message', msg => {
 		} else if(arg3 !== null) {
 			var cmd = msg.content.toString();
 			var vote = cmd.substr(cmd.indexOf(" ") + 8);
-			var votable = vote.split('|');
+			var votable = vote.split('-');
 
 			var q1 = votable[0];
 			var q2 = votable[1];
