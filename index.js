@@ -7,11 +7,11 @@ var fs = require('fs');
 //var words = fs.readFileSync('/home/ubuntu/rude.txt').toString().split("\n");
 var badwords = [];
 var lineReader = require('readline').createInterface({
-input: fs.createReadStream('/home/ubuntu/rude.txt');
+  input: require('fs').createReadStream('/home/ubuntu/rude.txt')
 });
 
 lineReader.on('line', function (line) {
-badwords.push(line);
+	badwords.push(line);
 });
 
 console.log(words);
