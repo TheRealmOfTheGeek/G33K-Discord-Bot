@@ -4,6 +4,9 @@ const client = new Discord.Client();
 var express = require('express');
 var app = express();
 var fs = require('fs');
+
+var voting = 0;
+
 var badwords = [];
 var lineReader = require('readline').createInterface({
   input: require('fs').createReadStream('/home/ubuntu/rude.txt')
@@ -131,6 +134,22 @@ client.on('message', msg => {
 				}});
 			  } 
 			});
+		}
+	}
+	else if(arg1 == "vote") {
+		if(arg2 === null) {
+			msg.reply("Please type '"+cmd.toString()+" vote yesno <question 1>|<question 2>' IMPORTANT: <question 1>|<question 2> IS ALL ONE WORD. USE '_' FOR SPACES! THEY ARE REPLACED TO SPACES AFTER.");
+		} else if(arg2 == "yesno" && arg3 === null) {
+			msg.reply("Please type '"+cmd.toString()+" vote ab <question 1>|<question 2>' IMPORTANT: <question 1>|<question 2> IS ALL ONE WORD. USE '_' FOR SPACES! THEY ARE REPLACED TO SPACES AFTER.");
+		} else if(arg3 !== null) {
+			var cmd = message.content.toString();
+			var vote = cmd.substr(cmd.indexOf(" ") + 8);
+			var votable = vote.split('|');
+
+			var q1 = votable[0];
+			var q2 = votable[1];
+			
+			msg.reply("has started a vote for: A) " + q1 + " OR B) " + q2);
 		}
 	}
   }
