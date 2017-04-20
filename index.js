@@ -62,7 +62,7 @@ client.on('message', msg => {
 	if(msg.content.toLowerCase().includes("fuck")) {
 		var whichone = Math.floor((Math.random() * 5) + 1);
 
-		msg.cancel();
+		msg.delete();
 		msg.reply(responses[whichone]);
 	}
   // Commands	
