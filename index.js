@@ -60,7 +60,7 @@ client.on('message', msg => {
 		msg.reply("Hello! If you need help, please type 'geek help'.");
 	} else if(arg1 == "introduce") {
 		if(arg2 == null) {
-			msg.channel.sendMessage({ to: "", message: "Hello World", tts: false });
+			msg.channel.sendMessage({ message: "Hello World", tts: false });
 			//msg.channel.sendMessage({"Introduce whome? Myself or Kento? (syntax: G33k introduce <yourself/kento/nick)"tts: true});	
 		} else 	if(arg2 == "yourself") {
 			msg.channel.sendMessage("", {embed: {
