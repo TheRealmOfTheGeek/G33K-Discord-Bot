@@ -157,7 +157,7 @@ client.on('message', msg => {
 		}
 	}
 	else if(arg1 == "vote") {
-		if(arg2 === null && arg3 == null) {
+		if(arg2 === null || arg3 === null) {
 			msg.reply("Please type '"+cmd.toString()+" vote ab <question 1>|<question 2>'");
 		} else if(arg2 == "ab" && arg3 === null) {
 			msg.reply("Please type '"+cmd.toString()+" vote ab <question 1>|<question 2>'");
@@ -176,7 +176,31 @@ client.on('message', msg => {
 			
 			
 		}
-	} else {
+	} 
+	else if(arg1 == "stats") {
+		if(arg2 === null) {
+			msg.reply("Stats for what? Syntax: '"+cmd.toString()+" stats <youtube>'");
+		} else if(arg2 == "youtube") {
+			request('https://api.nick.tools/youtubechannel?id=UCuX4KZBMpQLToSwJWy-jCBw', function (error, response, body) {
+		       if (response.statusCode == 200) {
+			   body = JSON.parse(body);
+			 msg.channel.sendMessage("", {embed: {
+			   color: 3447003,
+			   description: "Kento Subs: " + body.channel.stats.subs
+			 }});
+		       } else {
+			 msg.channel.sendMessage("", {embed: {
+			   color: 3447003,
+			   description: "Error while getting kento's yt info :("
+			 }});
+		       } 
+
+		     });
+		} else {
+			msg.reply("Idk how to get them stats for '" + arg2.toString() + "' :(");
+		}
+	}  
+	else {
 		msg.reply("error 404: command not found. Please type '"+cmd.toString()+" help' for help!");
 	}
 	
