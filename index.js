@@ -142,7 +142,7 @@ client.on('message', msg => {
 		} else if(arg2 == "yesno" && arg3 === null) {
 			msg.reply("Please type '"+cmd.toString()+" vote ab <question 1>|<question 2>' IMPORTANT: <question 1>|<question 2> IS ALL ONE WORD. USE '_' FOR SPACES! THEY ARE REPLACED TO SPACES AFTER.");
 		} else if(arg3 !== null) {
-			var cmd = message.content.toString();
+			var cmd = msg.content.toString();
 			var vote = cmd.substr(cmd.indexOf(" ") + 8);
 			var votable = vote.split('|');
 
