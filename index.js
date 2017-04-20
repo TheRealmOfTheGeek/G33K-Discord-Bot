@@ -24,9 +24,6 @@ client.on('ready', () => {
   console.log("Logged in as " + client.user.username + "!");
   client.user.setGame("therotg.com/bot");
 });
-client.on('ready', () => {
-  guild.channels.sendMessage("IM ALIVEEE");
-});
 
 // On person join
 newUsers = new Discord.Collection();
@@ -53,7 +50,10 @@ client.on('message', msg => {
 	msgs.push(m);
 	console.log(m);
   }
- 
+// Swear detection
+	if(msg.content.contains("fuck")) {
+		msg.reply("Please don't swear.");
+	}
   // Commands	
   var a = content.toLowerCase().split(" ");
   var cmd = a[0];
