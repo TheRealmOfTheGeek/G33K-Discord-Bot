@@ -51,7 +51,7 @@ client.on('message', msg => {
 	console.log(m);
   }
 // Swear detection
-	if(msg.content.toString().toLowerCase().contains("fuck")) {
+	if(msg.includes("fuck")) {
 		msg.reply("Please don't swear.");
 	}
   // Commands	
