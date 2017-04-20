@@ -186,8 +186,7 @@ client.on('message', msg => {
 			   body = JSON.parse(body);
 			 msg.channel.sendMessage("", {embed: {
 			   color: 3447003,
-			   description: "**Kento Currently Has:**\n " + body.channel.stats.subs + " Subscribers\n" + body.channel.stats.views + " views\n" + body.channel.stats.videos + " videos",
-			   website: "https://www.youtube.com/user/TheRealmOfTheGeek/"
+			   description: "**Kento Currently Has:**\n " + body.channel.stats.subs + " Subscribers\n" + body.channel.stats.views + " views\n" + body.channel.stats.videos + " videos.\n Add to the stats by subscribing to: https://www.youtube.com/user/TheRealmOfTheGeek/"
 			 }});
 		       } else {
 			 msg.channel.sendMessage("", {embed: {
