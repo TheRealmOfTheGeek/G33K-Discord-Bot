@@ -68,7 +68,7 @@ client.on('message', msg => {
 	"really? Did you read the rules??",
 	"I'm ashamed.",
 	"Please, http://i.memecaptain.com/gend_images/MzkJ3g.jpg"
-	]
+	];
 	for (var i = 0, len = badwords.length; i < len; i++) {
 		if(msg.content.toLowerCase().includes(badwords[i])) {
 			msg.delete();
@@ -98,12 +98,12 @@ client.on('message', msg => {
 
   if (cmd == "g33k" || cmd == "geek") {
 
-	if(arg1 === null) {
+	if(arg1 == null) {
 		msg.reply("Hello! If you need help, please type 'geek help'.");
 	} 
 	// Introduction
 	else if(arg1 == "introduce") {
-		if(arg2 === null) {
+		if(arg2 == null) {
 			msg.channel.sendMessage("Introduce whome? Myself or Kento? (syntax: G33k introduce <yourself/kento/nick)");	
 		} else 	if(arg2 == "yourself") {
 			msg.channel.sendMessage("", {embed: {
@@ -134,8 +134,9 @@ client.on('message', msg => {
 		}
 	}
   }
-  });
-}
+
+  
+});
 client.login(token);
 console.log('logged in');
 
@@ -150,5 +151,5 @@ app.get('/', function (req, res) {
   console.log('Access from ' + req.connection.remoteAddress);
 });
 app.listen(3434, function () {
-  console.log('Example app listening on port 3434!')
+  console.log('Example app listening on port 3434!');
 });
