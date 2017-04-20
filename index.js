@@ -4,7 +4,7 @@ const client = new Discord.Client();
 var express = require('express');
 var app = express();
 var fs = require('fs');
-
+// Test
 var voting = 0;
 
 var badwords = [];
