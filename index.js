@@ -6,7 +6,8 @@ var app = express();
 var fs = require('fs');
 var concat = require('concat-stream');
 var strawpoll = require('strawpoll');
- 
+ var JSONStream = require('JSONStream');
+
 // Test
 var voting = 0;
 
