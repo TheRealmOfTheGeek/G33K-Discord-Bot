@@ -60,8 +60,8 @@ client.on('message', msg => {
 	"I'm ashamed."
 	]
 	
-	if(msg.content.toLowerCase().includes("fuck") || msg.content.toLowerCase().includes("shit") || msg.content.toLowerCase().includes("nigger") || msg.content.toLowerCase().includes("cunt") || msg.content.toLowerCase().includes("fag")) {
-		var whichone = Math.floor((Math.random() * 5) + 1);
+	if(msg.content.toLowerCase().includes("fuck") || msg.content.toLowerCase().includes("shit") || msg.content.toLowerCase().includes("n1g") || msg.content.toLowerCase().includes("nig") || msg.content.toLowerCase().includes("cunt") || msg.content.toLowerCase().includes("fag")) {
+		var whichone = Math.floor((Math.random() * responses.length) + 1);
 
 		msg.delete();
 		msg.reply(responses[whichone]);
