@@ -176,6 +176,8 @@ client.on('message', msg => {
 			
 			
 		}
+	} else {
+		msg.reply("error 404: command not found. Please type '"+cmd.toString()+" help' for help!");
 	}
 	
   }
