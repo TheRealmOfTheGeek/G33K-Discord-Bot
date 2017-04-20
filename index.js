@@ -71,7 +71,7 @@ client.on('message', msg => {
 
 			msg.delete();
 			msg.reply(responses[whichone]);
-		}
+		)}
 	});
   // Commands	
   var a = content.toLowerCase().split(" ");
