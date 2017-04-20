@@ -200,7 +200,7 @@ client.on('message', msg => {
 			  .pipe(concat(function(id) {
 			    // `id` is a Buffer here 
 			    // `id.toString()` is your poll's id 
-			    msg.reply("rip");
+			    msg.reply("Strawpoll: https://strawpoll.me/" + id.toString());
 			  }));
 		}
 	}
