@@ -73,7 +73,7 @@ client.on('message', msg => {
 	]
 	// So do u know how to change suuup to sup?
 	/*
-	badwords.forEach(function(bw) {
+	badwords.forEach(function(bw)) {
 		if(msg.content.toLowerCase().includes(bw.toString())) {
 			var whichone = Math.floor((Math.random() * responses.length) + 1);
 
@@ -83,7 +83,7 @@ client.on('message', msg => {
 	});
 	*/
 	for (var i = 0, len = badwords.length; i < len; i++) {
-		if(msg.content.toLowerCase().includes(bw.toString())) {
+		if(msg.content.toLowerCase().includes(badwords[i])) {
 			var whichone = Math.floor((Math.random() * responses.length) + 1);
 
 			msg.delete();
