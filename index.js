@@ -50,9 +50,9 @@ client.on('message', msg => {
 	console.log(m);
   }
   // Swear Detection
-	if(msg.contains("fuck")) {
+if(msg.toString().contains("fuck")) {
 	msg.reply("Please don't swear.");
-	}
+}
   // Commands	
   var a = content.toLowerCase().split(" ");
   var cmd = a[0];
