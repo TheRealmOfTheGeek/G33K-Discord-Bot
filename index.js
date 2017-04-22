@@ -88,7 +88,7 @@ client.on('message', msg => {
 	}
 		
 // Swear detection
-	var responses = [
+	/*var responses = [
 	"cool people don't curse.",
 	"please don't swear.",
 	"swearing is not tolerated here.",
@@ -109,7 +109,7 @@ client.on('message', msg => {
 			}});
 			
 		}	
-	}
+	}*/
   // Commands
   var a = content.toLowerCase().split(" ");
   var cmd = a[0];
