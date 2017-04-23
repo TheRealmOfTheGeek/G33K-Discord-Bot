@@ -69,6 +69,10 @@ client.on('message', msg => {
 	if(msg.content.toLowerCase().includes("gtg")) {
 		msg.channel.sendMessage("Cya later, " + user.toString());
 	}
+	// Send Amazon Affiliate Link
+	if(msg.content.toLowerCase().includes("amazon.com")) {
+		msg.channel.sendMessage("Please click Kentos Amazon Affiliate Link when purchasing things to help support him (and keep me alive)!");   
+	}
 	// Markdown
 	//if(msg.content.toLowerCase().includes(":er ") && msg.content.toLowerCase().includes(" er:")) {
 	//				      
