@@ -71,7 +71,7 @@ client.on('message', msg => {
 	}
 	// Send Amazon Affiliate Link
 	if(msg.content.toLowerCase().includes("amazon.com")) {
-		msg.channel.sendMessage("Please click Kentos Amazon Affiliate Link when purchasing things to help support him (and keep me alive)!");   
+		msg.channel.sendMessage("Please click Kentos Amazon Affiliate Link when purchasing things to help support him (and keep me alive)! http://amzn.to/2paY7Vs");   
 	}
 	// Markdown
 	//if(msg.content.toLowerCase().includes(":er ") && msg.content.toLowerCase().includes(" er:")) {
