@@ -73,11 +73,6 @@ client.on('message', msg => {
 	if(msg.content.toLowerCase().includes("amazon.com")) {
 		msg.channel.sendMessage("Please click Kentos Amazon Affiliate Link when purchasing things to help support him (and keep me alive)! http://amzn.to/2paY7Vs");   
 	}
-	// Markdown
-	//if(msg.content.toLowerCase().includes(":er ") && msg.content.toLowerCase().includes(" er:")) {
-	//				      
-	//}
-	// Emotion
 	if(msg.content.toLowerCase().includes("geek") && msg.content.toLowerCase().includes("hate you") || msg.content.toLowerCase().includes("bitch")) {
 		var responses = [
 		"Ouch.",
