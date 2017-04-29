@@ -118,10 +118,10 @@ client.on('message', msg => {
 	// Set role
 	else if(arg1 == "role") {
 		if(arg2 == null) {
-			msg.reply("Please do '!role <web/java/c>'");
+			msg.reply("Please do 'geek role <web/java/c>'");
 		} else if(arg2 == "web") {
 			msg.reply("You're now a web dev!");
-			user.addRole("Basic Web Dev");
+	
 		}
 	}
 	// Introduction
