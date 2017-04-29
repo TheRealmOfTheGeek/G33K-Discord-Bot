@@ -121,6 +121,7 @@ client.on('message', msg => {
 			msg.reply("Please do '!role <web/java/c>'");
 		} else if(arg2 == "web") {
 			msg.reply("You're now a web dev!");
+			user.addRole("Basic Web Dev");
 		}
 	}
 	// Introduction
