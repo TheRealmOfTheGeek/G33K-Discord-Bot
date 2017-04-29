@@ -64,6 +64,19 @@ client.on('message', msg => {
 	msgs.push(m);
 	console.log(m);
   }
+	  // Commands
+  var a = content.toLowerCase().split(" ");
+  var cmd = a[0];
+  var arg1 = a[1];
+  var arg2 = a[2];
+  var arg3 = a[3];
+  var arg4 = a[4];
+  var arg5 = a[5];
+  var arg6 = a[6];
+  var arg7 = a[7];
+  var arg8 = a[8];
+  var arg9 = a[9];
+  var arg10 = a[10];
 	
 	// gtg and hello
 	if(msg.content.toLowerCase().includes("gtg")) {
@@ -72,6 +85,15 @@ client.on('message', msg => {
 	// Send Amazon Affiliate Link
 	if(msg.content.toLowerCase().includes("amazon.com")) {
 		msg.channel.sendMessage("Please click Kentos Amazon Affiliate Link when purchasing things to help support him (and keep me alive)! http://amzn.to/2paY7Vs");   
+	}
+	// set role
+	if(msg.content.toLowerCase().includes("!role") {
+		if(arg1 === null) {
+			msg.reply("Please do '!role <web/java/c>'");
+		}
+		if(arg1.content.includes("web") {
+			msg.reply("You're now a Basic Web Dev!");
+		}
 	}
 	if(msg.content.toLowerCase().includes("geek") && msg.content.toLowerCase().includes("hate you") || msg.content.toLowerCase().includes("bitch")) {
 		var responses = [
@@ -85,43 +107,6 @@ client.on('message', msg => {
 
 		msg.reply(responses[whichone]);
 	}
-		
-// Swear detection
-	/*var responses = [
-	"cool people don't curse.",
-	"please don't swear.",
-	"swearing is not tolerated here.",
-	"you could use another word..",
-	"really? Did you read the rules??",
-	"I'm ashamed.",
-	"Please, http://i.memecaptain.com/gend_images/MzkJ3g.jpg"
-	];
-	for (var i = 0, len = badwords.length; i < len; i++) {
-		if(msg.content.toLowerCase().includes(badwords[i])) {
-			msg.delete();
-			var whichone = Math.floor((Math.random() * responses.length));
-			msg.reply(responses[whichone]);
-			
-			msg.author.sendMessage("", {embed: {
-			  color: 0xce2916,
-			  description: "Think that anticurse was a false positive (e.g '"+msg.content.toString()+"' wasn't meant to be bad)? Please report it in #false-positives!"
-			}});
-			
-		}	
-	}*/
-  // Commands
-  var a = content.toLowerCase().split(" ");
-  var cmd = a[0];
-  var arg1 = a[1];
-  var arg2 = a[2];
-  var arg3 = a[3];
-  var arg4 = a[4];
-  var arg5 = a[5];
-  var arg6 = a[6];
-  var arg7 = a[7];
-  var arg8 = a[8];
-  var arg9 = a[9];
-  var arg10 = a[10];
 
   if (cmd == "g33k" || cmd == "geek") {
 
