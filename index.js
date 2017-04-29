@@ -116,14 +116,14 @@ client.on('message', msg => {
 		msg.reply("Hello! If you need help, please type 'geek help'.");
 	} 
 	// Set role
-	else if(arg1 == "role") {
-		if(arg2 == null) {
-			msg.reply("Please do 'geek role <web/java/c>'");
-		} else if(arg2 == "web") {
-			msg.reply("You're now a web dev!");
-			msg.member.setRole("Basic Web Dev");
-		}
-	}
+	//else if(arg1 == "role") {
+	//	if(arg2 == null) {
+	//		msg.reply("Please do 'geek role <web/java/c>'");
+	//	} else if(arg2 == "web") {
+	//		msg.reply("You're now a web dev!");
+	//		msg.guild.member
+	//	}
+	//}
 	// Introduction
 	else if(arg1 == "introduce") {
 		if(arg2 == null) {
