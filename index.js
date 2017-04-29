@@ -65,19 +65,19 @@ client.on('message', msg => {
 	console.log(m);
   }
 	  // Commands
-  var a = content.toLowerCase().split(" ");
-  var cmd = a[0];
-  var arg1 = a[1];
-  var arg2 = a[2];
-  var arg3 = a[3];
-  var arg4 = a[4];
-  var arg5 = a[5];
-  var arg6 = a[6];
-  var arg7 = a[7];
-  var arg8 = a[8];
-  var arg9 = a[9];
-  var arg10 = a[10];
-	
+	  var a = content.toLowerCase().split(" ");
+	  var cmd = a[0];
+	  var arg1 = a[1];
+	  var arg2 = a[2];
+	  var arg3 = a[3];
+	  var arg4 = a[4];
+	  var arg5 = a[5];
+	  var arg6 = a[6];
+	  var arg7 = a[7];
+	  var arg8 = a[8];
+	  var arg9 = a[9];
+	  var arg10 = a[10];
+
 	// gtg and hello
 	if(msg.content.toLowerCase().includes("gtg")) {
 		msg.channel.sendMessage("Cya later, " + user.toString());
@@ -87,14 +87,8 @@ client.on('message', msg => {
 		msg.channel.sendMessage("Please click Kentos Amazon Affiliate Link when purchasing things to help support him (and keep me alive)! http://amzn.to/2paY7Vs");   
 	}
 	// set role
-	if(msg.content.toLowerCase().includes("!role") {
-		if(arg1 === null) {
-			msg.reply("Please do '!role <web/java/c>'");
-		}
-		if(arg1.content.includes("web") {
-			msg.reply("You're now a Basic Web Dev!");
-		}
-	}
+	
+	// Main commands
 	if(msg.content.toLowerCase().includes("geek") && msg.content.toLowerCase().includes("hate you") || msg.content.toLowerCase().includes("bitch")) {
 		var responses = [
 		"Ouch.",
@@ -107,12 +101,28 @@ client.on('message', msg => {
 
 		msg.reply(responses[whichone]);
 	}
+	/*if(msg.content.toLowerCase().includes("!role") {
+		if(arg1 === null) {
+			msg.reply("Please do '!role <web/java/c>'");
+		}
+		if(arg1 == "web") {
+			msg.reply("You're now a Basic Web Dev!");
+		}
+	}*/
 
   if (cmd == "g33k" || cmd == "geek") {
 
 	if(arg1 == null) {
 		msg.reply("Hello! If you need help, please type 'geek help'.");
 	} 
+	// Set role
+	else if(arg1 == "role") {
+		if(arg2 == null) {
+			msg.reply("Please do '!role <web/java/c>'");
+		} else if(arg2 == "web") {
+			msg.reply("You're now a web dev!");
+		}
+	}
 	// Introduction
 	else if(arg1 == "introduce") {
 		if(arg2 == null) {
